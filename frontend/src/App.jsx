@@ -10,20 +10,22 @@ import Register from './pages/Register';
 
 function App() {
   return (
-    <Router>
-      <Header />
-      <main className="container mx-auto p-4">
-        <Routes>
-          <Route path="/" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path="/add-books" element={<AddBooks />} />
-          <Route path="/register-student" element={<RegisterStudent />} />
-          <Route path="/issue-book" element={<IssueBook />} />
-        </Routes>
-      </main>
-      <Footer />
-    </Router>
+    <div className="flex flex-col min-h-screen">
+      <Router>
+        <Header />
+        <main className="container mx-auto p-4 flex-grow">
+          <Routes>
+            <Route path="/" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/add-books" element={<AddBooks />} />
+            <Route path="/register-student" element={<RegisterStudent />} />
+            <Route path="/issue-book" element={<IssueBook />} />
+          </Routes>
+        </main>
+        <Footer />
+      </Router>
+    </div>
   );
 }
 

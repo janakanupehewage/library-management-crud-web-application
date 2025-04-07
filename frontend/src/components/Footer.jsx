@@ -1,7 +1,7 @@
 function Footer() {
     return (
       <footer className="bg-blue-600 text-white text-center p-4">
-        Library Management System © 2025
+        &copy; {new Date().getFullYear()} Library Management System
       </footer>
     );
   }

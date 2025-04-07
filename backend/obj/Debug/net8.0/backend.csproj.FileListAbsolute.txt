@@ -167,3 +167,4 @@ C:\Users\Janaka\Desktop\ASPNet_WEB\backend\obj\Debug\net8.0\refint\backend.dll
 C:\Users\Janaka\Desktop\ASPNet_WEB\backend\obj\Debug\net8.0\backend.pdb
 C:\Users\Janaka\Desktop\ASPNet_WEB\backend\obj\Debug\net8.0\backend.genruntimeconfig.cache
 C:\Users\Janaka\Desktop\ASPNet_WEB\backend\obj\Debug\net8.0\ref\backend.dll
+C:\Users\Janaka\Desktop\ASPNet_WEB\backend\obj\Debug\net8.0\backend.sourcelink.json

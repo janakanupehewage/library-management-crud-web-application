@@ -11,6 +11,7 @@ namespace backend.Data
         public DbSet<Book> Books { get; set; }
         public DbSet<IssueRecord> IssueRecords { get; set; }
         public DbSet<Fine> Fines { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

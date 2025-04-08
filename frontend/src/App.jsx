@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Dashboard from './pages/Dashboard';
@@ -9,18 +10,21 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 function App() {
+  const { isAuthenticated } = useAuth();
+
   return (
     <div className="flex flex-col min-h-screen">
       <Router>
-        <Header />
+      <Header isAuthenticated={isAuthenticated} />
         <main className="container mx-auto p-4 flex-grow">
           <Routes>
-            <Route path="/" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/dashboard" element={<Dashboard />} />
-            <Route path="/add-books" element={<AddBooks />} />
-            <Route path="/register-student" element={<RegisterStudent />} />
-            <Route path="/issue-book" element={<IssueBook />} />
+            <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Login />} />
+            <Route path="/register" element={isAuthenticated ? <Navigate to="/dashboard" /> : <Register />} />
+
+            <Route path="/dashboard" element={isAuthenticated ? <Dashboard /> : <Navigate to="/" />} />
+            <Route path="/add-books" element={isAuthenticated ? <AddBooks /> : <Navigate to="/" />} />
+            <Route path="/register-student" element={isAuthenticated ? <RegisterStudent /> : <Navigate to="/" />} />
+            <Route path="/issue-book" element={isAuthenticated ? <IssueBook /> : <Navigate to="/" />} />
           </Routes>
         </main>
         <Footer />

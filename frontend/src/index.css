@@ -1,1 +1,12 @@
 @import "tailwindcss";
+
+/* Add this in your global CSS file or in a style tag */
+.custom-select option {
+    color: white; /* Initial color for options */
+  }
+  
+  .custom-select:focus,
+  .custom-select:not([value=""]) {
+    color: black; /* Change color when dropdown is focused or an option is selected */
+  }
+  

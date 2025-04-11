@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/AuthContext'; // Adjust path as needed
+import { useAuth } from '../context/AuthContext'; 
 import { FiEye, FiEyeOff } from 'react-icons/fi'; // Import eye icons from react-icons
-import backgroundImg from '../assets/dashboard-bg.jpg'; // Import your background image here
+import backgroundImg from '../assets/dashboard-bg.jpg'; // Imported background image
 
 function Login() {
   const navigate = useNavigate();
@@ -27,16 +27,16 @@ function Login() {
         return res.json();
       })
       .then(data => {
-        login(data.Token); // <--- Update context immediately
-        navigate('/dashboard'); // Now navigation should work immediately
+        login(data.Token); // Update context immediately
+        navigate('/dashboard'); // navigation
       })
       .catch(err => alert(err.message));
   };
 
   return (
     <div
-      className="flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // Apply the background image
+      className="flex justify-center items-center h-screen bg-cover bg-center bg-no-repeat rounded-lg"
+      style={{ backgroundImage: `url(${backgroundImg})` }} // background image
     >
       <form
         onSubmit={handleLogin}

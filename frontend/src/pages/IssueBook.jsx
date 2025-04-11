@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import backgroundImg from "../assets/dashboard-bg.jpg"; // Import the background image
+import backgroundImg from "../assets/dashboard-bg.jpg"; 
 
 function IssueBook() {
   const [issueRecords, setIssueRecords] = useState([]);
@@ -122,7 +122,7 @@ function IssueBook() {
   return (
     <div
       className="min-h-screen p-6 bg-cover bg-center bg-no-repeat flex justify-center items-center rounded-lg"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // Use the imported background image
+      style={{ backgroundImage: `url(${backgroundImg})` }} 
     >
       <div className="w-full max-w-4xl bg-[rgba(255,255,255,0.1)] backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-lg">
         {/* Search bar always visible */}
@@ -146,7 +146,7 @@ function IssueBook() {
                 name="studentId"
                 value={formData.studentId}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-md bg-transparent text-white focus:outline-none"
+                className="cursor-pointer w-full p-3 border rounded-md bg-transparent text-white focus:outline-none"
               >
                 <option className="text-black" value="">
                   Select Student
@@ -169,7 +169,7 @@ function IssueBook() {
                 name="bookId"
                 value={formData.bookId}
                 onChange={handleChange}
-                className="w-full p-3 border rounded-md bg-transparent text-white focus:outline-none"
+                className="cursor-pointer w-full p-3 border rounded-md bg-transparent text-white focus:outline-none"
               >
                 <option className="text-black" value="">
                   Select Book
@@ -191,14 +191,14 @@ function IssueBook() {
 
               <button
                 type="submit"
-                className="w-full bg-gradient-to-r from-cyan-200 to-blue-300 text-blue-900 p-3 rounded-md"
+                className="cursor-pointer w-full bg-gradient-to-r from-cyan-200 to-blue-300 text-blue-900 p-3 rounded-md"
               >
                 {formData.issueId ? "Update Issue Record" : "Issue Book"}
               </button>
               <button
                 type="button"
                 onClick={resetForm}
-                className="w-full bg-gray-500 text-white p-3 rounded-md"
+                className="cursor-pointer w-full bg-gray-500 text-white p-3 rounded-md"
               >
                 Cancel
               </button>
@@ -229,16 +229,16 @@ function IssueBook() {
                   filteredRecords.map((record) => (
                     <tr
                       key={record.issueId}
-                      className="border-b hover:bg-gray-50"
+                      className="border-b text-white"
                     >
-                      <td className="border px-4 py-2">
+                      <td className="border border-black px-4 py-2">
                         {record.student?.name}
                       </td>
-                      <td className="border px-4 py-2">{record.book?.title}</td>
-                      <td className="border px-4 py-2">
+                      <td className="border border-black px-4 py-2">{record.book?.title}</td>
+                      <td className="border border-black px-4 py-2">
                         {record.issueDate.split("T")[0]}
                       </td>
-                      <td className="border px-4 py-2 text-center">
+                      <td className="border border-black px-4 py-2 text-center">
                         <button
                           onClick={() => handleEdit(record)}
                           className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 cursor-pointer"
@@ -281,13 +281,13 @@ function IssueBook() {
             <div className="flex justify-between">
               <button
                 onClick={() => handleReturnConfirm(returningRecord.issueId)}
-                className="bg-green-500 text-white px-4 py-2 rounded-md"
+                className="bg-green-500 text-white px-4 py-2 rounded-md cursor-pointer"
               >
                 Confirm Return
               </button>
               <button
                 onClick={() => setReturnPopupVisible(false)}
-                className="bg-gray-500 text-white px-4 py-2 rounded-md"
+                className="bg-gray-500 text-white px-4 py-2 rounded-md cursor-pointer"
               >
                 Cancel
               </button>

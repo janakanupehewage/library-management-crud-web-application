@@ -10,7 +10,8 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 
 function App() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
+  if (loading) return null;
 
   return (
     <div className="flex flex-col min-h-screen">

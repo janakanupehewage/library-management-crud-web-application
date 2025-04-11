@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { FiEye, FiEyeOff } from 'react-icons/fi'; // Import eye icons from react-icons
-import backgroundImg from '../assets/dashboard-bg.jpg'; // ✅ Import your background image
+import backgroundImg from '../assets/dashboard-bg.jpg'; // Import your background image
 
 function Register() {
   const navigate = useNavigate();
@@ -19,7 +19,7 @@ function Register() {
 
   const handleRegister = (e) => {
     e.preventDefault();
-    // Perform register API call (replace with actual API endpoint)
+    // Perform register API call 
     fetch('http://localhost:5167/api/user/register', { // Updated
       method: 'POST',
       body: JSON.stringify(formData),
@@ -35,8 +35,8 @@ function Register() {
 
   return (
     <div
-      className="min-h-screen p-6 bg-cover bg-center bg-no-repeat flex justify-center items-center"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // ✅ Use the imported image here
+      className="min-h-screen p-6 bg-cover bg-center bg-no-repeat flex justify-center items-center rounded-lg"
+      style={{ backgroundImage: `url(${backgroundImg})` }} // the imported image 
     >
       <form
         onSubmit={handleRegister}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImg from '../assets/dashboard-bg.jpg'; // ✅ Import your background image
+import backgroundImg from '../assets/dashboard-bg.jpg'; 
 
 function AddBooks() {
   const [books, setBooks] = useState([]);
@@ -74,7 +74,7 @@ function AddBooks() {
 
   const handleEditBook = (book) => {
     setNewBook({
-      BookId: book.bookId, // Ensure BookId is part of the object
+      BookId: book.bookId, 
       ISBN: book.isbn,
       Title: book.title,
       Author: book.author,
@@ -95,9 +95,9 @@ function AddBooks() {
   return (
     <div
       className="min-h-screen p-6 bg-cover bg-center bg-no-repeat flex justify-center items-center rounded-lg"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // ✅ Use the imported image here
+      style={{ backgroundImage: `url(${backgroundImg})` }} 
     >
-      <div className="w-full max-w-4xl bg-[rgba(255,255,255,0.07)] backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-lg">
+      <div className="w-full max-w-5xl bg-[rgba(255,255,255,0.07)] backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-lg">
         {isFormVisible ? (
           <>
             <h1 className="cursor-pointer text-2xl font-bold text-center mb-6 text-white drop-shadow-md">
@@ -180,24 +180,26 @@ function AddBooks() {
               <tbody>
                 {books.length > 0 ? (
                   books.map((book, index) => (
-                    <tr key={index} className="border-b hover:bg-gray-50">
-                      <td className="border px-4 py-2">{book.isbn}</td>
-                      <td className="border px-4 py-2">{book.title}</td>
-                      <td className="border px-4 py-2">{book.author}</td>
-                      <td className="border px-4 py-2">{book.quantity}</td>
-                      <td className="border px-4 py-2 text-center">
-                        <button
-                          onClick={() => handleEditBook(book)}
-                          className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 cursor-pointer"
-                        >
-                          Edit
-                        </button>
-                        <button
-                          onClick={() => handleDeleteBook(book.bookId)}
-                          className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2 cursor-pointer"
-                        >
-                          Delete
-                        </button>
+                    <tr key={index} className="border-b text-white">
+                      <td className="border border-black px-4 py-2">{book.isbn}</td>
+                      <td className="border border-black px-4 py-2">{book.title}</td>
+                      <td className="border border-black px-4 py-2">{book.author}</td>
+                      <td className="border border-black px-4 py-2">{book.quantity}</td>
+                      <td className="border border-black px-4 py-2 text-center">
+                        <div className="flex flex-wrap justify-center gap-2">
+                            <button
+                              onClick={() => handleEditBook(book)}
+                              className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 cursor-pointer"
+                            >
+                              Edit
+                            </button>
+                            <button
+                              onClick={() => handleDeleteBook(book.bookId)}
+                              className="bg-red-500 text-white px-3 py-1 rounded-md hover:bg-red-600 ml-2 cursor-pointer"
+                            >
+                              Delete
+                            </button>
+                          </div>
                       </td>
                     </tr>
                   ))

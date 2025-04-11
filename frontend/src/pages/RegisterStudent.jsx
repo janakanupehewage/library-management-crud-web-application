@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import backgroundImg from '../assets/dashboard-bg.jpg'; // ✅ Import your background image
+import backgroundImg from '../assets/dashboard-bg.jpg'; 
 
 function RegisterStudent() {
   const [users, setUsers] = useState([]);
@@ -7,7 +7,7 @@ function RegisterStudent() {
     UserId: '',
     name: '',
     email: '',
-    address: '', // Correct field name
+    address: '', 
   });
   const [isFormVisible, setIsFormVisible] = useState(false);
 
@@ -16,7 +16,7 @@ function RegisterStudent() {
   }, []);
 
   const fetchUsers = async () => {
-    const response = await fetch('http://localhost:5167/api/student'); // Adjust endpoint
+    const response = await fetch('http://localhost:5167/api/student'); 
     const data = await response.json();
     console.log("data", data);
     setUsers(data);
@@ -67,8 +67,8 @@ function RegisterStudent() {
 
   const handleEditUser = (user) => {
     setFormData({
-      UserId: user.studentId, // Ensure correct field mapping here
-      name: user.name,      // Use name, not username
+      UserId: user.studentId, 
+      name: user.name,      
       email: user.email,
       address: user.address,
     });
@@ -83,7 +83,7 @@ function RegisterStudent() {
   return (
     <div
       className="min-h-screen p-6 bg-cover bg-center bg-no-repeat flex justify-center items-center rounded-lg"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // ✅ Use the imported image here
+      style={{ backgroundImage: `url(${backgroundImg})` }} 
     >
       <div className="w-full max-w-4xl bg-[rgba(255,255,255,0.07)] backdrop-blur-md border border-white/30 p-8 rounded-2xl shadow-lg">
         {isFormVisible ? (
@@ -159,11 +159,11 @@ function RegisterStudent() {
               <tbody>
                 {users.length > 0 ? (
                   users.map((user, index) => (
-                    <tr key={index} className="border-b hover:bg-gray-50">
-                      <td className="border px-4 py-2">{user.name}</td>
-                      <td className="border px-4 py-2">{user.email}</td>
-                      <td className="border px-4 py-2">{user.address}</td>
-                      <td className="border px-4 py-2 text-center">
+                    <tr key={index} className="border-b text-white">
+                      <td className="border border-black px-4 py-2">{user.name}</td>
+                      <td className="border border-black px-4 py-2">{user.email}</td>
+                      <td className="border border-black px-4 py-2">{user.address}</td>
+                      <td className="border border-black px-4 py-2 text-center">
                         <button
                           onClick={() => handleEditUser(user)}
                           className="bg-yellow-500 text-white px-3 py-1 rounded-md hover:bg-yellow-600 cursor-pointer"

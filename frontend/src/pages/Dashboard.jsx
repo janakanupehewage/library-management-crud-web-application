@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import backgroundImg from "../assets/dashboard-bg.jpg"; // ✅ Import your background image
+import backgroundImg from "../assets/dashboard-bg.jpg"; // background image
 
 function Dashboard() {
   const [stats, setStats] = useState({
@@ -20,7 +20,7 @@ function Dashboard() {
   return (
     <div
       className="min-h-screen p-6 bg-cover bg-center bg-no-repeat rounded-2xl shadow-inner"
-      style={{ backgroundImage: `url(${backgroundImg})` }} // ✅ Use the imported image here
+      style={{ backgroundImage: `url(${backgroundImg})` }} // imported image
     >
       {/* Operations Links Row */}
       <div className="flex justify-end mb-6 space-x-3">
@@ -50,7 +50,7 @@ function Dashboard() {
           { label: "Total Students", value: stats.totalStudents },
           { label: "Total Books", value: stats.totalBooks },
           { label: "Total Issued Books", value: stats.totalIssuedBooks },
-          { label: "Total Admins", value: stats.totalAdmins },
+          { label: "Total Librarians", value: stats.totalAdmins },
         ].map((item, index) => (
           <div
             key={index}

@@ -16,7 +16,7 @@ namespace LibraryManagementSystem.Controllers
             _context = context;
         }
 
-        // GET: api/book
+        // GET: api/book method
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Book>>> GetBooks()
         {

@@ -37,7 +37,7 @@ namespace LibraryManagementSystem.Controllers
             return book;
         }
 
-        // POST: api/book
+        // POST: api/book method
         [HttpPost]
         public async Task<ActionResult<Book>> AddBook(Book book)
         {
